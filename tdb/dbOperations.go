@@ -522,7 +522,7 @@ func validateDatabaseName(name string) error {
 		return errors.New("database name is required")
 	} else {
 		split := strings.Split(name, ".")
-		if len(split) != 2 || split[1] != "txt" {
+		if split[len(split)-1] != "txt" {
 			return errors.New("database name must be a .txt file")
 		}
 	}
